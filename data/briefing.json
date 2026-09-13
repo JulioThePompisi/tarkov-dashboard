@@ -1,10 +1,26 @@
 {
-  "date": null,
-  "generatedAt": null,
+  "date": "2026-09-12",
+  "generatedAt": "2026-09-12T23:05:34-07:00",
   "briefing": {
-    "summary": "No briefing yet. The first scheduled run will populate this.",
-    "categories": []
+    "summary": "No major new patch dropped in the last 24 hours; the game world is still digesting last week's 1.1.5.0 Lighthouse/Icebreaker rework, and attention is turning to the PvE-focused 1.2.0.0 update expected late September/early October. Reddit's RSS feeds were unreachable this run, so community-sentiment coverage below is thinner than usual and pulled from secondary sources instead.",
+    "categories": [
+      {
+        "title": "Patch & Balance Changes",
+        "items": [
+          "Patch 1.1.5.0 (released Sept 8) remains the current live build — no hotfix or rollback has landed in the last 24 hours. It overhauled Lighthouse (new Rogue positions, reworked chokepoints, a BTR patrol route), reworked the Lightkeeper access task chain, and changed how players transition to Icebreaker: instead of a ruble toll, you now need a one-time 'Sudak-tudak' marine repair kit obtained via the 'Passing through!' quest.",
+          "Icebreaker's XP farming was nerfed (less experience for killing Wedge, his retinue, and Black Division fighters there), but players on the forums/Steam discussions are still split on whether the location's difficulty needed a bigger nerf or none at all — worth watching if BSG follows up with a further adjustment.",
+          "Looking ahead: update 1.2.0.0 is on the roadmap for late September/early October, focused on PvE mode — reworked bot spawn logic and AI behavior, a new PvE prestige system, and improvements to raid reconnection. Nothing shipped yet, but it's the next thing to watch for."
+        ]
+      },
+      {
+        "title": "Wipe Watch",
+        "items": [
+          "No wipe in the immediate window. Current seasonal character ('Kord Breach', started Aug 3, 2026) is projected to run until early December, with the next full seasonal reset expected around December 7, 2026.",
+          "Reminder for the season structure: BSG has moved to a split model with a permanent (non-wiping) character alongside a seasonal character that resets on its own schedule, so 'wipe' now mainly refers to the seasonal character rather than a full account reset."
+        ]
+      }
+    ]
   },
   "updates": [],
-  "lastChecked": null
+  "lastChecked": "2026-09-12T23:05:34-07:00"
 }
