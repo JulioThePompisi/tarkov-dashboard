@@ -1,5 +1,7 @@
 const TIER_ORDER = ["S", "A", "B", "C", "D"];
 const ALL_MAPS_LABEL = "All Keys";
+const FALLBACK_ICON =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="4.2"/><path d="M11 11 L20 20 M15.5 15.5 L18 13 M17.5 17.5 L20 15"/></svg>';
 
 let allKeys = [];
 let activeTab = ALL_MAPS_LABEL;
@@ -84,37 +86,73 @@ function renderTiers() {
     heading.textContent = "Tier " + tier;
     group.appendChild(heading);
 
-    const list = document.createElement("div");
-    list.className = "key-list";
+    const grid = document.createElement("div");
+    grid.className = "key-grid";
 
     for (const key of items) {
-      const card = document.createElement("div");
-      card.className = "key-card";
-
-      const name = document.createElement("p");
-      name.className = "key-name";
-      name.textContent = key.name;
-      if (activeTab === ALL_MAPS_LABEL) {
-        const mapTag = document.createElement("span");
-        mapTag.className = "key-map-tag";
-        mapTag.textContent = key.map;
-        name.appendChild(mapTag);
-      }
-      card.appendChild(name);
-
-      if (key.note) {
-        const note = document.createElement("p");
-        note.className = "key-note";
-        note.textContent = key.note;
-        card.appendChild(note);
-      }
-
-      list.appendChild(card);
+      grid.appendChild(buildKeyBox(key));
     }
 
-    group.appendChild(list);
+    group.appendChild(grid);
     container.appendChild(group);
   }
+}
+
+function buildKeyBox(key) {
+  const box = document.createElement("div");
+  box.className = "key-box";
+  box.tabIndex = 0;
+
+  const iconWrap = document.createElement("div");
+  iconWrap.className = "key-icon";
+
+  if (key.icon) {
+    const img = document.createElement("img");
+    img.src = key.icon;
+    img.alt = key.name;
+    img.loading = "lazy";
+    img.addEventListener("error", () => {
+      img.remove();
+      iconWrap.innerHTML = FALLBACK_ICON;
+      iconWrap.classList.add("fallback");
+    });
+    iconWrap.appendChild(img);
+  } else {
+    iconWrap.innerHTML = FALLBACK_ICON;
+    iconWrap.classList.add("fallback");
+  }
+  box.appendChild(iconWrap);
+
+  const label = document.createElement("p");
+  label.className = "key-box-label";
+  label.textContent = key.name;
+  box.appendChild(label);
+
+  const tooltip = document.createElement("div");
+  tooltip.className = "key-tooltip";
+
+  const tName = document.createElement("p");
+  tName.className = "key-tooltip-name";
+  tName.textContent = key.name;
+  tooltip.appendChild(tName);
+
+  const tMeta = document.createElement("p");
+  tMeta.className = "key-tooltip-meta";
+  tMeta.innerHTML =
+    '<span class="tier-pill tier-' + key.tier + '">Tier ' + key.tier + "</span>" +
+    (activeTab === ALL_MAPS_LABEL ? '<span class="key-map-tag">' + key.map + "</span>" : "");
+  tooltip.appendChild(tMeta);
+
+  if (key.note) {
+    const tNote = document.createElement("p");
+    tNote.className = "key-tooltip-note";
+    tNote.textContent = key.note;
+    tooltip.appendChild(tNote);
+  }
+
+  box.appendChild(tooltip);
+
+  return box;
 }
 
 loadKeys();
