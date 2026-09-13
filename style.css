@@ -39,6 +39,30 @@ body {
   font-size: 0.85rem;
 }
 
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+.site-nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -151,4 +175,106 @@ h2 {
   padding: 0 1.5rem 2rem;
   color: var(--text-dim);
   font-size: 0.8rem;
+}
+
+/* Key tier list page */
+
+.keys-main {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.map-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.map-tab {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.map-tab:hover {
+  color: var(--text);
+}
+
+.map-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14151a;
+  font-weight: 600;
+}
+
+.tier-list {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.tier-group {
+  margin-bottom: 1.5rem;
+}
+
+.tier-group:last-child {
+  margin-bottom: 0;
+}
+
+.tier-heading {
+  font-size: 1rem;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+}
+
+.tier-S { background: #6a3f3f; color: #ffb4b4; }
+.tier-A { background: #6a5a3f; color: #ffd89e; }
+.tier-B { background: #5a6a3f; color: #d9ff9e; }
+.tier-C { background: #3f5a6a; color: #9edcff; }
+.tier-D { background: #3a3d4d; color: #b8bbd0; }
+
+.key-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.key-card {
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+.key-name {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.key-map-tag {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.key-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
 }
