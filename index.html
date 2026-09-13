@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarkov News Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Escape from Tarkov — News Dashboard</h1>
+    <p id="last-checked" class="last-checked">Loading…</p>
+  </header>
+
+  <main>
+    <section id="briefing" class="briefing">
+      <h2>Today's Briefing</h2>
+      <p id="briefing-date" class="briefing-date"></p>
+      <p id="briefing-summary" class="briefing-summary"></p>
+      <div id="briefing-categories" class="categories"></div>
+    </section>
+
+    <section id="updates" class="updates">
+      <h2>Updates Today</h2>
+      <div id="updates-list" class="updates-list"></div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Sources: r/EscapefromTarkov · Official patch notes · tarkov.dev · EFT Wiki</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
